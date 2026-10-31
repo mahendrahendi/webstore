@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+ * KOIN v2 theme — dark "night mode" only, lime as the main color,
+ * violet and pink as small accents. Values come from KOIN Top-Up v2.dc.html.
+ */
+:root {
+  /* KOIN palette */
+  --koin-bg: #0b0b12;
+  --koin-surface: #15151f;
+  --koin-raised: #1e1e2c;
+  --koin-ink: #f4f3ff;
+  --koin-soft: #c9c7de;
+  --koin-muted: #a6a4c0;
+  --koin-faint: #6e6c8a;
+  --koin-lime: #c6ff3d;
+  --koin-lime-hover: #d6ff70;
+  --koin-pink: #ff4fd8;
+  --koin-pink-soft: #ff8be6;
+  --koin-pink-text: #ffb3f0;
+  --koin-violet: #b79cff;
+  --koin-violet-hover: #d3c2ff;
+  --koin-violet-tag: #c9b6ff;
+  --koin-cyan: #7fe3ff;
+  --koin-danger: #ff5c5c;
+  --koin-danger-text: #ffb3b3;
+
+  /* shadcn/ui semantic tokens, mapped onto the KOIN palette */
+  --radius: 0.875rem;
+  --background: var(--koin-bg);
+  --foreground: var(--koin-ink);
+  --card: var(--koin-surface);
+  --card-foreground: var(--koin-ink);
+  --popover: var(--koin-raised);
+  --popover-foreground: var(--koin-ink);
+  --primary: var(--koin-lime);
+  --primary-foreground: var(--koin-bg);
+  --secondary: var(--koin-ink);
+  --secondary-foreground: var(--koin-bg);
+  --muted: rgba(255, 255, 255, 0.08);
+  --muted-foreground: var(--koin-muted);
+  --accent: rgba(255, 255, 255, 0.06);
+  --accent-foreground: var(--koin-ink);
+  --destructive: var(--koin-danger);
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: var(--koin-lime);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-bg: var(--koin-bg);
+  --color-surface: var(--koin-surface);
+  --color-raised: var(--koin-raised);
+  --color-ink: var(--koin-ink);
+  --color-soft: var(--koin-soft);
+  --color-faint: var(--koin-faint);
+  --color-lime: var(--koin-lime);
+  --color-lime-hover: var(--koin-lime-hover);
+  --color-pink: var(--koin-pink);
+  --color-pink-soft: var(--koin-pink-soft);
+  --color-pink-text: var(--koin-pink-text);
+  --color-violet: var(--koin-violet);
+  --color-violet-hover: var(--koin-violet-hover);
+  --color-violet-tag: var(--koin-violet-tag);
+  --color-cyan: var(--koin-cyan);
+  --color-danger: var(--koin-danger);
+  --color-danger-text: var(--koin-danger-text);
+
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-display: var(--font-unbounded), sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    margin: 0;
+    background: var(--koin-bg);
+    color: var(--koin-ink);
+    font-family: var(--font-sans);
+  }
+  a {
+    color: var(--koin-lime);
+  }
+  a:hover {
+    color: #e2ff9a;
+  }
+  button {
+    font-family: inherit;
+  }
+  input::placeholder {
+    color: var(--koin-faint);
+  }
+  :focus {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid var(--koin-lime);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--koin-lime);
+    color: var(--koin-bg);
+  }
+}
